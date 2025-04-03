@@ -34,7 +34,7 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="typing-effect">MUHAMMED NASEEF P K</h1>
+                <h1 class="typing-effect">MUHAMMED NASEEF PK</h1>
                 <h2>Cyber Security & Ethical Hacking Enthusiast</h2>
                 <p>Securing digital landscapes, one vulnerability at a time</p>
                 <div class="cta-buttons">
@@ -251,46 +251,25 @@
 
     <script src="script.js"></script>
     <script>
-        // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
-        const icon = darkModeToggle.querySelector('i');
-
-        // Check for saved user preference
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            body.classList.add('dark-mode');
-            icon.classList.replace('fa-moon', 'fa-sun');
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
         }
 
-        // Toggle dark mode
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('darkMode', 'enabled');
-                icon.classList.replace('fa-moon', 'fa-sun');
-            } else {
-                localStorage.setItem('darkMode', 'disabled');
-                icon.classList.replace('fa-sun', 'fa-moon');
-            }
-        });
+        // Automatically adapt to system theme and store user preference
+        (function() {
+            const savedTheme = localStorage.getItem("theme");
+            const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const themeToApply = savedTheme ? savedTheme : (systemPrefersDark ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", themeToApply);
+        })();
 
-        // Check system preference
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('darkMode')) {
-            body.classList.add('dark-mode');
-            icon.classList.replace('fa-moon', 'fa-sun');
-        }
-
-        // Listen for system preference changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            if (!localStorage.getItem('darkMode')) {
-                if (e.matches) {
-                    body.classList.add('dark-mode');
-                    icon.classList.replace('fa-moon', 'fa-sun');
-                } else {
-                    body.classList.remove('dark-mode');
-                    icon.classList.replace('fa-sun', 'fa-moon');
-                }
+        // Listen for system theme changes
+        window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", event => {
+            if (!localStorage.getItem("theme")) {
+                document.documentElement.setAttribute("data-theme", event.matches ? "dark" : "light");
             }
         });
     </script>

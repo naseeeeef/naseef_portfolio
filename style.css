@@ -315,7 +315,7 @@ section:nth-child(even) {
     white-space: nowrap;
     overflow: hidden;
     margin: 0 auto;
-    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing {
@@ -1134,38 +1134,49 @@ body.dark-mode section:nth-child(even) {
     background-color: #1e293b;
 }
 
-body.dark-mode .project-card {
-    background-color: #1e293b;
-    border-color: #334155;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+body.dark-mode .about-text p {
+    color: #e2e8f0;
 }
 
-body.dark-mode .project-card:hover {
-    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+body.dark-mode .timeline-content p {
+    color: #e2e8f0;
 }
 
-body.dark-mode .skill-category {
-    background-color: #1e293b;
-    border-color: #334155;
+body.dark-mode .project-card p {
+    color: #e2e8f0;
 }
 
-body.dark-mode .skill-bar {
-    background-color: #334155;
+body.dark-mode .project-card h3 {
+    color: #f8fafc;
 }
 
-body.dark-mode .timeline-content {
-    background-color: #1e293b;
-    border-color: #334155;
+body.dark-mode .project-tags span {
+    background: var(--gradient);
+    color: #f8fafc;
 }
 
-body.dark-mode .contact-item {
-    background-color: #1e293b;
-    border-color: #334155;
+body.dark-mode .skill-category h3 {
+    color: #f8fafc;
 }
 
-body.dark-mode .contact-form {
-    background-color: #1e293b;
-    border-color: #334155;
+body.dark-mode .skill-name {
+    color: #f8fafc;
+}
+
+body.dark-mode .contact-item h3 {
+    color: #f8fafc;
+}
+
+body.dark-mode .contact-item p {
+    color: #e2e8f0;
+}
+
+body.dark-mode .contact-item a {
+    color: var(--primary-color);
+}
+
+body.dark-mode .contact-item a:hover {
+    color: var(--secondary-color);
 }
 
 body.dark-mode .form-group input,
@@ -1173,6 +1184,11 @@ body.dark-mode .form-group textarea {
     background-color: #334155;
     border-color: #475569;
     color: #e2e8f0;
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: #94a3b8;
 }
 
 body.dark-mode .form-group input:focus,
@@ -1191,7 +1207,7 @@ body.dark-mode .stat-item .count {
 }
 
 body.dark-mode .stat-item .label {
-    color: #94a3b8;
+    color: #e2e8f0;
 }
 
 body.dark-mode .timeline-content h3 {
@@ -1206,30 +1222,6 @@ body.dark-mode .timeline-date {
     color: #94a3b8;
 }
 
-body.dark-mode .project-card h3 {
-    color: #f8fafc;
-}
-
-body.dark-mode .project-card p {
-    color: #94a3b8;
-}
-
-body.dark-mode .skill-category h3 {
-    color: #f8fafc;
-}
-
-body.dark-mode .skill-name {
-    color: #f8fafc;
-}
-
-body.dark-mode .navbar {
-    background-color: rgba(15, 23, 42, 0.95);
-}
-
-body.dark-mode .navbar.scrolled {
-    background-color: rgba(15, 23, 42, 0.98);
-}
-
 body.dark-mode .nav-links a {
     color: #e2e8f0;
 }
@@ -1240,6 +1232,56 @@ body.dark-mode .nav-links a::after {
 
 body.dark-mode .hamburger .bar {
     background-color: #e2e8f0;
+}
+
+body.dark-mode .hero h1 {
+    color: #f8fafc;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.dark-mode .hero h2 {
+    color: #94a3b8;
+}
+
+body.dark-mode .hero p {
+    color: #e2e8f0;
+}
+
+body.dark-mode .btn.primary-btn {
+    background: var(--gradient);
+    color: #f8fafc;
+    border: none;
+}
+
+body.dark-mode .btn.secondary-btn {
+    background-color: transparent;
+    color: #f8fafc;
+    border: 2px solid #f8fafc;
+}
+
+body.dark-mode .btn.secondary-btn:hover {
+    background-color: #f8fafc;
+    color: var(--primary-color);
+}
+
+body.dark-mode .scroll-down i {
+    color: #f8fafc;
+}
+
+body.dark-mode .footer-content p {
+    color: #e2e8f0;
+}
+
+body.dark-mode .social-links a {
+    color: #f8fafc;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .social-links a:hover {
+    background-color: var(--primary-color);
+    color: #f8fafc;
 }
 
 /* System Dark Mode */
